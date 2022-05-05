@@ -1,0 +1,19 @@
+:root {
+    --blue: hsl(231, 69%, 60%);
+    --red: hsl(0, 94%, 66%);
+    --gray: hsl(229, 8%, 60%);
+    --very-dark-blue: hsl(229, 31%, 21%);
+}
+
+html {
+    font-size: 18px;
+    font-family: 'Rubik', sans-serif;
+}
+
+button {
+    border: none;
+    outline: none;
+    background: none;
+    font-size: inherit;
+    font-family: inherit;
+}
