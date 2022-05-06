@@ -16,7 +16,9 @@ html {
     font-size: 18px;
     font-family: 'Rubik', sans-serif;
 }
-
+body {
+    min-height: 200vh;
+}
 button {
     border: none;
     outline: none;
@@ -46,12 +48,11 @@ a {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
-    border: 1px solid black;
-    padding: 40px 30px;
+    right: 0;
+    padding: 40px 0;
 }
 
-.flex-container-row {
+.nav-flex-row {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -61,17 +62,19 @@ a {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    width: 100%;
+    padding: 40px 30px;
     background-color: var(--very-dark-blue-alpha);
 }
 
 .menu-list {
-    display: none;
-    list-style: none;
-    margin-top: 40px;
     flex: 1;
+    display: none;
+    margin-top: 40px;
     font-size: 1.2em;
     color: white;
     text-transform: uppercase;
+    list-style: none;
     letter-spacing: 1px;
 }
 
@@ -80,9 +83,9 @@ a {
 }
 
 .menu-item {
+    display: block;
     padding: 20px 0;
     text-align: center;
-    display: block;
     border-bottom: 1px solid rgba(255, 255, 255, 0.161);
 }
 
@@ -91,24 +94,72 @@ a {
 }
 
 .social-media-container {
+    width: 85px;
+    margin: 0 auto;
     display: none;
     justify-content: space-between;
     align-items: center;
-    width: 85px;
-    margin: 0 auto;
 }
 
 .nav.nav.active>.social-media-container {
     display: flex;
-
 }
 
 .login-btn {
-    margin-top: 20px;
-    text-align: center;
     width: 100%;
-    font-size: inherit;
-    padding: 10px 20px;
+    margin-top: 20px;
+    padding: 10px 30px;
+    text-align: center;
     border: 3px solid white; 
+    color: white;
 }
 
+@media (min-width: 740px) {
+    .nav {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .nav-burger {
+        display: none;
+    }
+
+    .menu-list {
+        display: flex;
+        align-items: center;
+        gap: 46px;
+        margin-top: 0px;
+        flex: 0;
+        font-size: 0.75em;
+        color: black;
+    }
+    
+    .menu-item {
+        padding: 0;
+        border-bottom: none;
+    }
+
+    .menu-item:hover {
+        color: var(--red);
+    }
+    
+    .menu-list>li:first-of-type>.menu-item{
+        border-top: none;
+    }
+    
+    .login-btn {
+        margin-top: 0px;
+        border-color: var(--red);
+        background-color: var(--red);
+    }
+    .login-btn:hover {
+        background-color: white;
+        color: var(--red);
+    }
+}
+
+@media (min-width: 950px) {
+    .nav {
+        padding-right: 90px;
+    }
+}
