@@ -18,6 +18,7 @@ html {
 }
 body {
     min-height: 200vh;
+    overflow-x: hidden;
 }
 button {
     border: none;
@@ -27,7 +28,6 @@ button {
     cursor: pointer;
     font-size: inherit;
     color: inherit;
-    border-radius: 8px;
     text-transform: inherit;
     letter-spacing: inherit;
     text-align: inherit;
@@ -42,6 +42,54 @@ a {
     width: min(1200px, 85%);
 }
 
+.btn {
+    border-radius: 8px;
+    padding: 10px 30px;
+    text-align: center;
+    border: 3px solid white; 
+}
+
+.btn-blue {
+    color: white;
+    border-color: var(--blue);
+    background-color: var(--blue);
+}
+.btn-blue:hover {
+    color: var(--blue);
+    background-color: white;
+}
+
+.btn-gray {
+    color: var(--very-dark-blue);
+    background-color: rgb(247, 247, 247);
+    border-color: rgb(247, 247, 247);
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+.btn-gray:hover {
+    border-color: var(--gray);
+}
+
+.btn-red {
+    border-color: var(--red);
+    background-color: var(--red);
+    color: white;
+}
+
+.btn-red:hover {
+    background-color: white;
+    color: var(--red);
+}
+
+.heading {
+    color: var(--very-dark-blue);
+    margin-bottom: 20px;
+    line-height: 150%;
+}
+
+.text {
+    color: var(--gray);
+    line-height: 140%;
+}
 /* ------------------NAV---------------------- */
 
 .nav {
@@ -49,7 +97,7 @@ a {
     top: 0;
     left: 0;
     right: 0;
-    padding: 40px 0;
+    padding: 20px 0;
 }
 
 .nav-flex-row {
@@ -108,16 +156,20 @@ a {
 .login-btn {
     width: 100%;
     margin-top: 20px;
-    padding: 10px 30px;
-    text-align: center;
-    border: 3px solid white; 
-    color: white;
+    border-color: white;
+    background-color: transparent;
+} 
+
+.login-btn:hover{
+    background-color: transparent;
+    color: white; 
 }
 
-@media (min-width: 740px) {
+@media (min-width: 820px) {
     .nav {
         display: flex;
         justify-content: space-between;
+        z-index: 99;
     }
 
     .nav-burger {
@@ -153,7 +205,6 @@ a {
         background-color: var(--red);
     }
     .login-btn:hover {
-        background-color: white;
         color: var(--red);
     }
 }
@@ -162,4 +213,89 @@ a {
     .nav {
         padding-right: 90px;
     }
+}
+
+/* ------------------HERO---------------------- */
+
+.hero {
+    margin-top: 122px;
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+}
+
+.illustration-container {
+    position: relative;
+}
+.illustration-container::after{
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 10%;
+    width: 100vw;
+    height: 75%;
+    border-radius: 0 0 0 100px;
+    background-color: var(--blue);
+    z-index: -1;
+}
+
+.illustration {
+    width: 100%;
+    transform: scale(1.1);
+}
+
+.text-container {
+    text-align: center;
+}
+
+.text-container>p{
+    margin: 20px 0;
+}
+
+.text-container>button {
+    padding: 10px 15px;
+    font-size: .8em;
+}
+
+@media (min-width: 450px) {
+    .text-container>button:nth-of-type(1) {
+        margin-right: 20px;
+    }
+
+    .text-container {
+        font-size: 1.2em;
+    }
+}
+
+@media (min-width: 820px) {
+    .hero {
+        flex-direction: row-reverse;
+        gap: 35px;
+        align-items: center;
+    }
+    .hero>*{
+        flex-basis: 50%;
+    }
+    .illustration-container::after{
+        left: 35%;
+    }
+    .text-container {
+        font-size: 1em;
+        text-align: left;
+    }
+
+    .text-container>h1 {
+        font-size: 2em;
+    }
+    
+}
+
+
+@media (min-width: 1025px) {
+
+    .text-container {
+        font-size: 1.2em;
+    }
+    
 }
