@@ -21,7 +21,7 @@ html {
 }
 
 body {
-    min-height: 1000vh;
+    /* min-height: 1000vh; */
     overflow-x: hidden;
 }
 
@@ -174,7 +174,7 @@ a {
     align-items: center;
 }
 
-.nav.nav.active>.social-media-container {
+.nav.active>.social-media-container {
     display: flex;
 }
 
@@ -496,6 +496,11 @@ a {
     cursor: pointer;
 }
 
+.question::after {
+    content: url('assets/icons/icon-arrow.svg');
+    display: block;
+}
+
 .question:hover>p {
     color: var(--red);
 }
@@ -517,6 +522,11 @@ a {
 
 .qna-container.active .answer {
     max-height: 100px;
+}
+
+.qna-container.active .arrow {
+    transform: rotateX(180deg);
+    /* filter: invert(41%) sepia(51%) saturate(918%) hue-rotate(316deg) brightness(106%) contrast(96%); */
 }
 
 .contact {
