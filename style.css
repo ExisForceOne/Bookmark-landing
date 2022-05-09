@@ -11,7 +11,7 @@
     --thin-border-black: 1px solid rgba(0, 0, 0, 0.161)
 }
 
-/* // CSS RESET-------------------------------------- */
+/* // base-------------------------------------- */
 
 * {
     margin: 0;
@@ -54,7 +54,7 @@ ul {
     list-style: none;
 }
 
-/* // IDK HOW TO NAZWAĆ TO ------------- */
+/* // Wraps ------------- */
 
 .wrap {
     margin: 0 auto;
@@ -65,6 +65,8 @@ ul {
     margin: 0 auto;
     max-width: 580px;
 }
+
+/* // btns ------------- */
 
 .btn {
     border-radius: 8px;
@@ -106,6 +108,8 @@ ul {
     color: var(--red);
 }
 
+/* // Topography */
+
 .heading {
     color: var(--very-dark-blue);
     margin-bottom: 20px;
@@ -115,24 +119,6 @@ ul {
 .text {
     color: var(--gray);
     line-height: 140%;
-}
-
-.text-and-ilustration-container {
-    display: flex;
-    flex-direction: column;
-    gap: 35px;
-}
-
-.social-media-container {
-    width: 85px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.ilustration {
-    width: 100%;
 }
 
 .text-container {
@@ -148,25 +134,6 @@ ul {
     font-size: .8em;
 }
 
-.ilustration-container {
-    position: relative;
-}
-
-.ilustration-container::after {
-    content: '';
-    display: block;
-    position: absolute;
-    bottom: 0;
-    left: 10%;
-    width: 100vw;
-    height: 75%;
-    border-radius: 0 0 0 100px;
-    background-color: var(--blue);
-    z-index: -1;
-}
-
-
-
 @media (min-width: 450px) {
 
     .text-container {
@@ -175,19 +142,6 @@ ul {
 }
 
 @media (min-width: 820px) {
-
-    .text-and-ilustration-container {
-        flex-direction: row-reverse;
-        align-items: center;
-    }
-
-    .text-and-ilustration-container>* {
-        flex: 1 1;
-    }
-
-    .illustration-container::after {
-        left: 35%;
-    }
 
     .text-container {
         font-size: 1em;
@@ -209,6 +163,55 @@ ul {
 }
 
 
+/* // flex-containers ------------- */
+
+.text-and-ilustration-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.social-media-container {
+    width: 85px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@media (min-width: 820px) {
+
+    .text-and-ilustration-container {
+        flex-direction: row-reverse;
+        align-items: center;
+    }
+
+    .text-and-ilustration-container>* {
+        flex: 1 1;
+    }
+
+}
+
+/* // Ilustrations */
+
+.ilustration {
+    width: 100%;
+}
+
+.ilustration-container {
+    position: relative;
+}
+
+.ilustration-container::after {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    background-color: var(--blue);
+    z-index: -1;
+}
+
 
 /* ------------------NAV---------------------- */
 
@@ -222,18 +225,6 @@ ul {
     align-items: center;
 }
 
-.nav.active {
-    position: fixed;
-    top: 0;
-    left: 0;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    width: 100%;
-    padding: 40px 30px;
-    background-color: var(--very-dark-blue-alpha);
-}
-
 .menu-list {
     flex: 1;
     display: none;
@@ -241,10 +232,6 @@ ul {
     font-size: 1.2em;
     color: white;
     letter-spacing: 1px;
-}
-
-.nav.active>.menu-list {
-    display: block;
 }
 
 .menu-item {
@@ -263,6 +250,23 @@ ul {
     display: none;
 }
 
+.nav.active {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    width: 100%;
+    padding: 40px 30px;
+    background-color: var(--very-dark-blue-alpha);
+    z-index: 99;
+}
+
+.nav.active>.menu-list {
+    display: block;
+}
+
 .nav.active>.social-media-container {
     display: flex;
 }
@@ -278,7 +282,6 @@ ul {
     background-color: transparent;
     color: white;
 }
-
 
 
 @media (min-width: 820px) {
@@ -342,6 +345,18 @@ ul {
     transform: scale(1.1);
 }
 
+.hero-text-and-ilustration-container {
+    gap: 35px;
+}
+
+.hero-ilustration-container::after {
+    bottom: 0;
+    left: 10%;
+    width: 100vw;
+    height: 75%;
+    border-radius: 0 0 0 100px;
+}
+
 @media (min-width: 450px) {
 
     .hero-text-container>button:nth-of-type(1) {
@@ -362,11 +377,6 @@ ul {
 
 .features {
     margin-top: 150px;
-}
-
-.features-text-container {
-    margin: 0 auto;
-    max-width: 645px;
 }
 
 .features-btns {
