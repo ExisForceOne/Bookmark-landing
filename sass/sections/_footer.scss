@@ -1,0 +1,66 @@
+@use "../variables" as *;
+
+.footer {
+  padding: 40px 0;
+  background-color: $very-dark-blue;
+  text-align: center;
+}
+
+.footer-content-container {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.footer-menu-item {
+  color: white;
+  font-size: 0.9em;
+  padding: 15px 0;
+  border: none;
+  text-transform: uppercase;
+  display: block;
+  text-align: center;
+  color: white;
+  font-size: 0.9em;
+  padding: 15px 0;
+
+  &:hover {
+    color: $red;
+  }
+}
+
+.footer-social-media-container {
+  display: flex;
+
+  img:hover {
+    filter: invert(41%) sepia(51%) saturate(918%) hue-rotate(316deg) brightness(105%) contrast(96%);
+  }
+}
+
+@media (min-width: 680px) {
+  .footer-content-container {
+    flex-direction: row;
+    gap: 25px;
+  }
+
+  .footer-logo {
+    transform: translateY(2px);
+  }
+
+  .footer-menu-list {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    gap: 30px;
+    font-size: 0.9em;
+    letter-spacing: 1px;
+  }
+
+  .footer-menu-item {
+    padding: 0;
+  }
+
+  .footer-social-media-container {
+    display: flex;
+  }
+}

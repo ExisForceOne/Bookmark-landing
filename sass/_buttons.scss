@@ -1,0 +1,42 @@
+@use '_variables' as *;
+  
+ .btn {
+    border-radius: 8px;
+    padding: 10px 30px;
+    text-align: center;
+    border: 3px solid white;
+  }
+  
+  .btn-blue {
+    color: white;
+    border-color: $blue;
+    background-color: $blue;
+  
+    &:hover {
+      color: $blue;
+      background-color: white;
+    }
+  }
+  
+  .btn-gray {
+    color: $very-dark-blue;
+    background-color: rgb(247, 247, 247);
+    border-color: rgb(247, 247, 247);
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+  
+    &:hover {
+      border-color: $gray;
+    }
+  }
+  
+  .btn-red {
+    border-color: $red;
+    background-color: $red;
+    color: white;
+  
+    &:hover {
+      background-color: white;
+      color: $red;
+    }
+  }
+  

@@ -1,0 +1,84 @@
+@use "../variables" as *;
+
+.features {
+  margin-top: 150px;
+}
+
+.features-btns {
+  display: flex;
+  flex-direction: column;
+  margin: 40px auto;
+  max-width: 750px;
+  text-align: center;
+}
+
+.feature-btn {
+  position: relative;
+  padding: 20px 0;
+  color: $gray;
+  border-bottom: $thin-border-black;
+  flex: 1;
+
+  &:hover {
+    color: $red;
+  }
+
+  &:nth-of-type(1) {
+    border-top: $thin-border-black;
+  }
+
+  &.active {
+    color: $very-dark-blue;
+
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      bottom: 0;
+      left: 25%;
+      width: 50%;
+      height: 3px;
+      background-color: $red;
+    }
+  }
+}
+
+@media (min-width: 820px) {
+  .features-btns {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .feature-btn {
+    &.active::after {
+      left: 0;
+      width: 100%;
+    }
+
+    &:nth-of-type(1) {
+      border-top: none;
+    }
+  }
+}
+
+.features-text-and-ilustration-container {
+  gap: 80px;
+}
+
+.features-ilustration-container::after {
+  bottom: -15%;
+  right: 15%;
+  left: auto;
+  height: 97%;
+  border-radius: 0 0 100px 0;
+}
+
+@media (min-width: 820px) {
+  .features-text-and-ilustration-container {
+    flex-direction: row;
+  }
+
+  .tabs-text-container {
+    text-align: left;
+  }
+}

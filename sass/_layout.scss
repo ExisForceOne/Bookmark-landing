@@ -1,0 +1,44 @@
+@use "variables" as *;
+
+.text-and-ilustration-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.social-media-container {
+  width: 85px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ilustration {
+  width: 100%;
+}
+
+.ilustration-container {
+  position: relative;
+
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    background-color: $blue;
+    z-index: -1;
+  }
+}
+
+@media (min-width: 820px) {
+  .text-and-ilustration-container {
+    flex-direction: row-reverse;
+    align-items: center;
+
+    > * {
+      flex: 1 1;
+    }
+  }
+}

@@ -10,7 +10,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500&display=swap" rel="stylesheet">
   <!-- ///////// -->
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
-  <link rel="stylesheet" href="style.css">
+  <!-- <link rel="stylesheet" href="style.css"> -->
+  <link rel="stylesheet" href="css/main.css">
   <script src="main.js" defer></script>
   <title>Bookmark landing page</title>
 
@@ -20,7 +21,7 @@
 <body>
   <nav class="nav wrap">
     <div class="nav-flex-row">
-      <a href="#"><img src="assets/logos/logo-bookmark.svg" alt="Bookmark logo"></a>
+      <a href="#"><img class="nav-logo" src="assets/logos/logo-bookmark.svg" alt="Bookmark logo"></a>
       <button><img class="nav-burger" src="assets/icons/icon-hamburger.svg" alt=""></button>
     </div>
     <ul class="menu-list">
@@ -158,7 +159,7 @@
         <h3>Stay up-to-date with what we’re doing</h3>
       </div>
       <form class="contact-form" action="#">
-        <div class="contact-form-input-container">
+        <div class="contact-form-input-container error">
           <input class="contact-form-input" placeholder='Enter your email address' type="email" name="email" id="email">
         </div>
         <button class="btn btn-red" type="submit">Contact Us</button>

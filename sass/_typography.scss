@@ -1,0 +1,50 @@
+@use '_variables' as *;
+
+.heading {
+    color: $very-dark-blue;
+    margin-bottom: 20px;
+    line-height: 150%;
+  }
+  
+  .text {
+    color: $gray;
+    line-height: 140%;
+  }
+  
+  .text-container {
+    text-align: center;
+  
+    > {
+      p {
+        margin: 20px 0;
+      }
+  
+      button {
+        padding: 10px 15px;
+        font-size: .8em;
+      }
+    }
+  }
+  
+  @media (min-width: 450px) {
+    .text-container {
+      font-size: 1.2em;
+    }
+  }
+  
+  @media (min-width: 820px) {
+    .text-container {
+      font-size: 1em;
+  
+      > h1 {
+        font-size: 2em;
+      }
+    }
+  }
+  
+  @media (min-width: 1025px) {
+    .text-container {
+      font-size: 1.2em;
+    }
+  }
+  

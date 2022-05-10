@@ -1,0 +1,33 @@
+@use "../variables" as *;
+
+.hero {
+  margin-top: 122px;
+}
+
+.hero-ilustration {
+  transform: scale(1.1);
+}
+
+.hero-text-and-ilustration-container {
+  gap: 35px;
+}
+
+.hero-ilustration-container::after {
+  bottom: 0;
+  left: 10%;
+  width: 100vw;
+  height: 75%;
+  border-radius: 0 0 0 100px;
+}
+
+@media (min-width: 450px) {
+  .hero-text-container > button:nth-of-type(1) {
+    margin-right: 20px;
+  }
+}
+
+@media (min-width: 820px) {
+  .hero-text-container {
+    text-align: left;
+  }
+}
