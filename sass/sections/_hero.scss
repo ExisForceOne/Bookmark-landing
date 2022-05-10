@@ -2,22 +2,22 @@
 
 .hero {
   margin-top: 122px;
-}
 
-.hero-ilustration {
-  transform: scale(1.1);
-}
+  &-ilustration {
+    transform: scale(1.1);
+  }
 
-.hero-text-and-ilustration-container {
-  gap: 35px;
-}
+  &-text-and-ilustration-container {
+    gap: 35px;
+  }
 
-.hero-ilustration-container::after {
-  bottom: 0;
-  left: 10%;
-  width: 100vw;
-  height: 75%;
-  border-radius: 0 0 0 100px;
+  &-ilustration-container::after {
+    bottom: 0;
+    left: 10%;
+    width: 100vw;
+    height: 75%;
+    border-radius: 0 0 0 100px;
+  }
 }
 
 @media (min-width: 450px) {
