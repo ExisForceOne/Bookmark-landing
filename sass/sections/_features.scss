@@ -76,9 +76,9 @@
     &-text-and-ilustration-container {
       flex-direction: row;
     }
-  }
 
-  .tabs-text-container {
-    text-align: left;
+    &-text-container {
+      text-align: left;
+    }
   }
 }
