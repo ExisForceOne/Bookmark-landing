@@ -1,4 +1,4 @@
-@use "../variables" as *;
+@use "../global/variables" as *;
 
 .nav {
   padding: 20px 0;
@@ -67,8 +67,7 @@
   background-color: transparent;
 
   &:hover {
-    background-color: transparent;
-    color: white;
+    color: $very-dark-blue-alpha;
   }
 }
 
