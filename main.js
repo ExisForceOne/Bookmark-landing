@@ -5,11 +5,16 @@ const navLogo = document.querySelector(".nav-logo");
 const [...qnaList] = document.querySelectorAll(".faq-container");
 const [...featuresBtnsList] = document.querySelectorAll(".features-btn");
 const [...featuresTabsList] = document.querySelectorAll(".features-tab");
+const form = document.querySelector(".contact-form");
+const inputContainer = document.querySelector(".contact-input-container");
+const email = document.querySelector(".contact-input");
 
 //global variables
 let menuIsOpen = false;
 
 //functions
+const validateEmail = (email) => /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email);
+
 const closeMenu = () => {
   nav.classList.remove("active");
   navLogo.src = "assets/logos/logo-bookmark.svg";
@@ -44,6 +49,17 @@ function switchTabs() {
   featuresTabsList.find((tab) => tab.dataset.tabIndex === index).classList.add("active");
 }
 
+const formOnSubmit = (e) => {
+  e.preventDefault();
+  if (validateEmail(email.value)) {
+    alert("Mail send!");
+    inputContainer.classList.remove("error");
+    email.value = "";
+  } else {
+    inputContainer.classList.add("error");
+  }
+};
+
 const init = () => {
   burger.addEventListener("click", () => {
     menuIsOpen ? closeMenu() : openMenu();
@@ -51,6 +67,7 @@ const init = () => {
   window.addEventListener("resize", closeMenuOnDesktopView);
   qnaList.forEach((qna) => qna.addEventListener("click", showQuestion));
   featuresBtnsList.forEach((btn) => btn.addEventListener("click", switchTabs));
+  form.addEventListener("submit", formOnSubmit);
 };
 
 init();
