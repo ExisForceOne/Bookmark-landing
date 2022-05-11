@@ -59,7 +59,19 @@
     right: 15%;
     left: auto;
     height: 97%;
-    border-radius: 0 0 100px 0;
+    border-radius: 0 200px 100px 0;
+  }
+
+  &-ilustration-container-tab-2::after {
+    bottom: -5%;
+    right: 35%;
+    height: 85%;
+  }
+
+  &-ilustration-container-tab-3::after {
+    bottom: -8%;
+    right: 20%;
+    height: 85%;
   }
 }
 
