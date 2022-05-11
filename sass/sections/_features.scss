@@ -42,6 +42,14 @@
     }
   }
 
+  &-tab {
+    display: none;
+
+    &.active {
+      display: block;
+    }
+  }
+
   &-text-and-ilustration-container {
     gap: 80px;
   }
