@@ -18,8 +18,24 @@
     border-bottom: $thin-border-black;
     flex: 1;
 
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 50%;
+      transform: translateX(50%) scaleX(0);
+      height: 3px;
+      background-color: $red;
+      transition: transform 0.4s ease;
+    }
+
     &:hover {
       color: $red;
+      &::after {
+        transform: translateX(50%) scaleX(1);
+      }
     }
 
     &:nth-of-type(1) {
@@ -30,14 +46,7 @@
       color: $very-dark-blue;
 
       &::after {
-        content: "";
-        display: block;
-        position: absolute;
-        bottom: 0;
-        left: 25%;
-        width: 50%;
-        height: 3px;
-        background-color: $red;
+        transform: translateX(50%) scaleX(1);
       }
     }
   }
@@ -83,9 +92,17 @@
     }
 
     &-btn {
-      &.active::after {
-        left: 0;
+      &::after {
+        transform: translateX(0) scaleX(0);
         width: 100%;
+      }
+
+      &.active::after {
+        transform: translateX(0) scaleX(1);
+      }
+
+      &:hover::after {
+        transform: translateX(0) scaleX(1);
       }
 
       &:nth-of-type(1) {
