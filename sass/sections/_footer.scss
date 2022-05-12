@@ -23,17 +23,13 @@
     font-size: 0.9em;
     padding: 15px 0;
 
-    &:hover {
-      color: $red;
-    }
+    // &:hover {
+    //   color: $red;
+    // }
   }
 
   &-social-media-container {
     display: flex;
-
-    img:hover {
-      filter: invert(41%) sepia(51%) saturate(918%) hue-rotate(316deg) brightness(105%) contrast(96%);
-    }
   }
 }
 
@@ -64,5 +60,15 @@
     &-social-media-container {
       display: flex;
     }
+  }
+}
+
+@media (hover) {
+  .footer-menu-item:hover {
+    color: $red;
+  }
+
+  .footer-social-media-container img:hover {
+    filter: invert(41%) sepia(51%) saturate(918%) hue-rotate(316deg) brightness(105%) contrast(96%);
   }
 }

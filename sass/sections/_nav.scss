@@ -65,10 +65,6 @@
   margin-top: 20px;
   border-color: white;
   background-color: transparent;
-
-  &:hover {
-    color: $very-dark-blue-alpha;
-  }
 }
 
 @media (min-width: 820px) {
@@ -94,10 +90,6 @@
     &-item {
       padding: 0;
       border-bottom: none;
-
-      &:hover {
-        color: $red;
-      }
     }
 
     & li:first-of-type {
@@ -109,15 +101,17 @@
     margin-top: 0px;
     border-color: $red;
     background-color: $red;
-
-    &:hover {
-      color: $red;
-    }
   }
 }
 
 @media (min-width: 950px) {
   .nav {
     padding-right: 90px;
+  }
+}
+
+@media (hover) {
+  .menu-item:hover {
+    color: $red;
   }
 }

@@ -27,10 +27,6 @@
       transition: transform 0.5s, filter 0.5s;
     }
 
-    &:hover p {
-      color: $red;
-    }
-
     & p {
       color: $very-dark-blue;
       font-weight: 500;
@@ -54,5 +50,11 @@
   &-container.active &-question::after {
     transform: rotateX(180deg);
     filter: invert(41%) sepia(51%) saturate(918%) hue-rotate(316deg) brightness(106%) contrast(96%);
+  }
+}
+
+@media (hover) {
+  .faq-question:hover p {
+    color: $red;
   }
 }
